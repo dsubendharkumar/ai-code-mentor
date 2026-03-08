@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Mentor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🤖 AI Code Mentor</h1>
+      <p class="tagline">Learn with hints, not solutions</p>
+    </header>
+
+    <!-- Problem Detection Status -->
+    <div id="status-section" class="status-section">
+      <div id="problem-detected" class="status-card hidden">
+        <span class="status-icon">✅</span>
+        <div class="status-content">
+          <h3>Problem Detected</h3>
+          <p id="problem-title" class="problem-title"></p>
+        </div>
+      </div>
+      
+      <div id="no-problem" class="status-card hidden">
+        <span class="status-icon">⚠️</span>
+        <div class="status-content">
+          <h3>No Problem Detected</h3>
+          <p>Navigate to a coding problem on LeetCode, HackerRank, or Codeforces</p>
+        </div>
+      </div>
+
+      <div id="loading-problem" class="status-card">
+        <div class="loader small"></div>
+        <p>Detecting problem...</p>
+      </div>
+    </div>
+
+    <!-- Hint Level Buttons -->
+    <div id="hint-buttons" class="hint-buttons hidden">
+      <h2>Get Progressive Hints</h2>
+      
+      <button id="hint-level-1" class="hint-btn level-1" data-level="1">
+        <span class="btn-icon">💡</span>
+        <div class="btn-content">
+          <strong>Level 1: Conceptualize</strong>
+          <small>Understand the problem conceptually</small>
+        </div>
+      </button>
+
+      <button id="hint-level-2" class="hint-btn level-2" data-level="2">
+        <span class="btn-icon">🎯</span>
+        <div class="btn-content">
+          <strong>Level 2: Approach</strong>
+          <small>Learn the right strategy</small>
+        </div>
+      </button>
+
+      <button id="hint-level-3" class="hint-btn level-3" data-level="3">
+        <span class="btn-icon">📝</span>
+        <div class="btn-content">
+          <strong>Level 3: Steps</strong>
+          <small>Break down the solution</small>
+        </div>
+      </button>
+
+      <button id="hint-level-4" class="hint-btn level-4" data-level="4">
+        <span class="btn-icon">🔧</span>
+        <div class="btn-content">
+          <strong>Level 4: Pseudocode</strong>
+          <small>See the algorithm structure</small>
+        </div>
+      </button>
+    </div>
+
+    <!-- Hint Display Area -->
+    <div id="hint-display" class="hint-display hidden">
+      <div class="hint-header">
+        <h3 id="hint-level-title">Hint Level 1: Conceptualize</h3>
+        <button id="close-hint" class="close-btn">×</button>
+      </div>
+      <div id="hint-content" class="hint-content"></div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading-overlay hidden">
+      <div class="loader"></div>
+      <p>Getting your hint...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="error-message hidden">
+      <span class="error-icon">❌</span>
+      <p id="error-text"></p>
+      <button id="close-error" class="close-btn-small">Close</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings">
+      <details>
+        <summary>⚙️ Settings</summary>
+        <div class="settings-content">
+          <label>
+            <input type="text" id="api-url" placeholder="Backend URL (default: http://localhost:5000)">
+            <small>Server URL</small>
+          </label>
+          <button id="save-settings" class="save-btn">Save</button>
+        </div>
+      </details>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>💡 Remember: The goal is to learn, not just to solve!</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
